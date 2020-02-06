@@ -20,6 +20,7 @@ pub enum Shaders {
     None,
     Gouraud,
     Phong,
+    Sky,
 }
 
 pub fn get_shader<F>(display: &F, shader: Shaders) -> glium::Program where F: glium::backend::Facade {
