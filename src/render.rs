@@ -42,6 +42,12 @@ pub fn get_shader<F>(display: &F, shader: Shaders) -> glium::Program where F: gl
             include_str!("./shaders/phong.glslf"),
             None,
         ),
+        Shaders::Sky => glium::Program::from_source(
+            display,
+            include_str!("./shaders/sky.glslv"),
+            include_str!("./shaders/sky.glslf"),
+            None,
+        ),
     };
     program.unwrap()
 }
