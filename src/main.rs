@@ -26,7 +26,7 @@ use std::time::{Duration, Instant};
 use glutin::{
     dpi::{LogicalPosition, LogicalSize},
     ElementState::Pressed,
-    WindowEvent::{Closed, Resized, KeyboardInput},
+    WindowEvent::{Closed, KeyboardInput},
 };
 
 use simplelog::{Config, TermLogger, CombinedLogger, LogLevelFilter};
