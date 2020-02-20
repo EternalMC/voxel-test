@@ -178,7 +178,7 @@ fn main() {
             match event {
                 glutin::Event::WindowEvent { event, .. } => match event {
                     Closed => action = Action::Stop,
-                    Resized(w, h) => {
+                    Resized(glutin::dpi::LogicalSize(w, h)) => {
                         info!("Window resized to {}px x {}px", w, h);
                     },
                     KeyboardInput { input, .. } => {
