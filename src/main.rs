@@ -111,7 +111,7 @@ fn main() {
     ).unwrap();
     let mut events_loop = glutin::EventsLoop::new();
     let mut application = Application::new(&events_loop);
-    application.display.gl_window().set_cursor(glutin::MouseCursor::Grab).expect("couldn't grab cursor");
+    application.display.gl_window().set_cursor(glium::glutin::::MouseCursor::Grab).expect("couldn't grab cursor");
     let mut cursor_grabbed = true;
 
     let indices = glium::index::NoIndices(glium::index::PrimitiveType::TriangleStrip);
