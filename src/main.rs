@@ -23,8 +23,11 @@ use glium::Surface;
 use world::World;
 use std::thread;
 use std::time::{Duration, Instant};
-use glutin::ElementState::Pressed;
-use glutin::WindowEvent::{Closed, Resized, KeyboardInput};
+use glutin::{
+    dpi::{LogicalPosition, LogicalSize},
+    ElementState::Pressed;
+    WindowEvent::{Closed, Resized, KeyboardInput};
+}
 
 use simplelog::{Config, TermLogger, CombinedLogger, LogLevelFilter};
 
@@ -178,8 +181,10 @@ fn main() {
             match event {
                 glutin::Event::WindowEvent { event, .. } => match event {
                     Closed => action = Action::Stop,
-                    Resized(glutin::dpi::LogicalSize(w, h)) => {
-                        info!("Window resized to {}px x {}px", w, h);
+                    glutin::WindowEvent::Resized(size) => {
+                        let LogicalSize { width, height } = size;
+                        info!("WindowEvent::Resized: {:?}", size);
+
                     },
                     KeyboardInput { input, .. } => {
                         let pressed = input.state == Pressed;
