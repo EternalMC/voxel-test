@@ -38,7 +38,7 @@ struct Application {
 impl Application {
     pub fn new(events_loop: &glutin::EventsLoop) -> Application {
         let window = glutin::WindowBuilder::new()
-            .with_dimensions(default::VIEWPORT_WIDTH, default::VIEWPORT_HEIGHT)
+            .with_dimensions(glutin::dpi::LogicalSize::new(1024.0, 768.0));
             .with_title("Ave");
         let context = glutin::ContextBuilder::new()
             .with_depth_buffer(24)
