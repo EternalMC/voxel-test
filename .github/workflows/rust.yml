@@ -6,13 +6,15 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
-        rust: [stable]
+        rust: [nightly]
 
     steps:
     - uses: actions/checkout@v1
       with:
         rust-version: ${{ matrix.rust }}
     - uses: actions/checkout@master
+    - name: Update
+      run: cargo update
     - name: Build
       run: cargo build --verbose
     - name: Run tests
