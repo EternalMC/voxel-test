@@ -197,7 +197,7 @@ fn main() {
                                             application.display.gl_window().set_cursor_grab(glutin::Window::Normal).expect("couldn't ungrab cursor");
                                             cursor_grabbed = false;
                                         } else {
-                                            application.display.gl_window().set_cursor_grab(glutin::Window::Grab).expect("couldn't grab cursor");
+                                            application.display.gl_window().set_cursor_grab(glutin::Window.set_cursor_grab).expect("couldn't grab cursor");
                                             cursor_grabbed = true;
                                         }
                                     }
