@@ -46,7 +46,7 @@ impl Application {
         let context = glutin::ContextBuilder::new()
             .with_depth_buffer(24)
             .with_vsync(true);
-        let display = glium::Display::new(window, context, events_loop).unwrap();
+        let display = glium::Display::new(window, context, EventsLoop).unwrap();
         let camera = camera::CameraState::new();
         let game = game::Game::new();
         Application {
