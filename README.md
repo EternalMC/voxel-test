@@ -1,4 +1,4 @@
-# ave - Another Voxel Engine [![pipeline status](https://gitlab.com/jameshiew/ave/badges/master/pipeline.svg)](https://gitlab.com/jameshiew/ave/commits/master)
+# ave - Another Voxel Engine [![pipeline status](https://github.com/EternalMC/voxel-test/actions)](https://github.com/EternalMC/voxel-test/commits/master)
 
 ![Screenshot](screenshot.png "Screenshot")
 
