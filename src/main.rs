@@ -23,8 +23,12 @@ use glium::Surface;
 use world::World;
 use std::thread;
 use std::time::{Duration, Instant};
-use glutin::ElementState::Pressed;
-use glutin::WindowEvent::{Closed, Resized, KeyboardInput};
+use glutin::{
+    dpi::{LogicalPosition, LogicalSize},
+    ElementState::Pressed,
+    WindowEvent::{KeyboardInput},
+    MouseCursor,
+};
 
 use simplelog::{Config, TermLogger, CombinedLogger, LogLevelFilter};
 
@@ -37,9 +41,9 @@ struct Application {
 
 impl Application {
     pub fn new(events_loop: &glutin::EventsLoop) -> Application {
-        let window = glutin::WindowBuilder::new()
-            .with_dimensions(default::VIEWPORT_WIDTH, default::VIEWPORT_HEIGHT)
-            .with_title("Ave");
+        let mut window = glutin::WindowBuilder::new()
+            .with_title("Ave")
+            .with_dimensions(LogicalSize::new(1024.0, 768.0));
         let context = glutin::ContextBuilder::new()
             .with_depth_buffer(24)
             .with_vsync(true);
@@ -108,7 +112,7 @@ fn main() {
     ).unwrap();
     let mut events_loop = glutin::EventsLoop::new();
     let mut application = Application::new(&events_loop);
-    application.display.gl_window().set_cursor_state(glutin::CursorState::Grab).expect("couldn't grab cursor");
+    application.display.gl_window().set_cursor_state(glium::glutin::MouseCursor::Grab).expect("couldn't grab cursor");
     let mut cursor_grabbed = true;
 
     let indices = glium::index::NoIndices(glium::index::PrimitiveType::TriangleStrip);
@@ -178,8 +182,10 @@ fn main() {
             match event {
                 glutin::Event::WindowEvent { event, .. } => match event {
                     Closed => action = Action::Stop,
-                    Resized(w, h) => {
-                        info!("Window resized to {}px x {}px", w, h);
+                    glutin::WindowEvent::Resized(size) => {
+                        let LogicalSize { width, height } = size;
+                        info!("WindowEvent::Resized: {:?}", size);
+
                     },
                     KeyboardInput { input, .. } => {
                         let pressed = input.state == Pressed;
@@ -188,10 +194,10 @@ fn main() {
                                 glutin::VirtualKeyCode::Escape => {
                                     if pressed {
                                         if cursor_grabbed {
-                                            application.display.gl_window().set_cursor_state(glutin::CursorState::Normal).expect("couldn't ungrab cursor");
+                                            application.display.gl_window().set_cursor_grab(glutin::Window::Normal).expect("couldn't ungrab cursor");
                                             cursor_grabbed = false;
                                         } else {
-                                            application.display.gl_window().set_cursor_state(glutin::CursorState::Grab).expect("couldn't grab cursor");
+                                            application.display.gl_window().set_cursor_grab(glutin::Window.set_cursor_grab).expect("couldn't grab cursor");
                                             cursor_grabbed = true;
                                         }
                                     }
