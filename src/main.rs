@@ -112,7 +112,7 @@ fn main() {
     ).unwrap();
     let mut events_loop = glutin::EventsLoop::new();
     let mut application = Application::new(&events_loop);
-    window.window().set_cursor_grab(true).expect("couldn't grab cursor");
+    gl_window.window().set_cursor_grab(true).expect("couldn't grab cursor");
     let mut cursor_grabbed = true;
 
     let indices = glium::index::NoIndices(glium::index::PrimitiveType::TriangleStrip);
@@ -194,10 +194,10 @@ fn main() {
                                 glutin::VirtualKeyCode::Escape => {
                                     if pressed {
                                         if cursor_grabbed {
-                                            window.window().set_cursor_grab(false).expect("couldn't ungrab cursor");
+                                            gl_window.window().set_cursor_grab(false).expect("couldn't ungrab cursor");
                                             cursor_grabbed = false;
                                         } else {
-                                            window.window().set_cursor_grab(true).expect("couldn't grab cursor");
+                                            gl_window.window().set_cursor_grab(true).expect("couldn't grab cursor");
                                             cursor_grabbed = true;
                                         }
                                     }
