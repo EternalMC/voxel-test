@@ -197,7 +197,7 @@ fn main() {
                                             application.display.gl_window().window().grab_cursor(false).expect("couldn't ungrab cursor");
                                             cursor_grabbed = false;
                                         } else {
-                                            application.display.gl_window().window()grab_cursor(true).expect("couldn't grab cursor");
+                                            application.display.gl_window().window().grab_cursor(true).expect("couldn't grab cursor");
                                             cursor_grabbed = true;
                                         }
                                     }
