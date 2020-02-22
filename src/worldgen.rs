@@ -1,5 +1,5 @@
 use world::{ChunkCoordinates, HashChunk, Chunk, CHUNK_SIZE, get_position};
-use rand::{Rng, StdRng, SeedableRng};
+use rand::{Rng, SeedableRng};
 use noise::{NoiseModule, Perlin, Seedable};
 use block;
 
