@@ -4,7 +4,7 @@ version = "0.1.0-alpha"
 authors = ["James Hiew <james@hiew.net>"]
 
 [dependencies]
-glium = "0.25.1"
+glium = "0.26.0"
 glutin = "0.21.2" 
 cgmath = "0.15.0"
 collision = "0.12.0"
