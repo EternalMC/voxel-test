@@ -194,10 +194,10 @@ fn main() {
                                 glutin::VirtualKeyCode::Escape => {
                                     if pressed {
                                         if cursor_grabbed {
-                                            window().set_cursor_grab(false).expect("couldn't ungrab cursor");
+                                            display.gl_window().window().set_cursor_grab(false).expect("couldn't ungrab cursor");
                                             cursor_grabbed = false;
                                         } else {
-                                            window().set_cursor_grab(true).expect("couldn't grab cursor");
+                                            display.gl_window().window().set_cursor_grab(true).expect("couldn't grab cursor");
                                             cursor_grabbed = true;
                                         }
                                     }
