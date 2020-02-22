@@ -82,7 +82,7 @@ impl NaturalWorldGenerator {
     pub fn new(seed: usize) -> NaturalWorldGenerator {
         let mut generator = NaturalWorldGenerator { perlin: Perlin::new() };
         generator.perlin = generator.perlin.set_seed(seed);
-        debug!("Using seed {} for NaturalWorldGenerator", generator.perlin.seed);
+        debug!("Using seed {} for NaturalWorldGenerator", generator.perlin.seed());
         generator
     }
 }
