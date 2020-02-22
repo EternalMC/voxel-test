@@ -8,7 +8,7 @@ extern crate noise;
 #[macro_use]
 extern crate log;
 extern crate simplelog;
-
+ 
 mod render;
 mod block;
 mod camera;
