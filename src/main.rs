@@ -30,7 +30,7 @@ use glutin::{
     MouseCursor,
 };
 
-use simplelog::{Config, TermLogger, CombinedLogger, LogLevelFilter};
+use simplelog::{Config, TermLogger, CombinedLogger, LevelFilter};
 
 /// Global, thread-safe context for the application
 struct Application {
