@@ -43,7 +43,7 @@ impl Application {
     pub fn new(events_loop: &glutin::event_loop::EventLoop) -> Application {
         let window = glutin::WindowBuilder::new()
             .with_title("Ave")
-            .with_dimensions(LogicalSize::new(1024.0, 768.0));
+            .with_inner_size(LogicalSize::new(1024.0, 768.0));
         let context = glutin::ContextBuilder::new()
             .with_depth_buffer(24)
             .with_vsync(true);
