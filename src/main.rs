@@ -191,7 +191,7 @@ fn main() {
                         let pressed = input.state == Pressed;
                         match input.virtual_keycode {
                             Some(key) => match key {
-                                glutin::VirtualKeyCode::Escape => {
+                                glutin::event::VirtualKeyCode::Escape => {
                                     if pressed {
                                         if cursor_grabbed {
                                             application.display.gl_window().window().grab_cursor(false).expect("couldn't ungrab cursor");
