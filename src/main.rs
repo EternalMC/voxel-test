@@ -40,7 +40,7 @@ struct Application {
 }
 
 impl Application {
-    pub fn new(events_loop: &glutin::EventsLoop) -> Application {
+    pub fn new(events_loop: &glutin::event_loop::EventLoop) -> Application {
         let window = glutin::WindowBuilder::new()
             .with_title("Ave")
             .with_dimensions(LogicalSize::new(1024.0, 768.0));
