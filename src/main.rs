@@ -110,7 +110,7 @@ fn main() {
             TermLogger::new(LogLevelFilter::Debug, Config::default()).unwrap(),
         ]
     ).unwrap();
-    let mut events_loop = glutin::EventsLoop::new();
+    let mut events_loop = glutin::event_loop::EventLoop::new();
     let mut application = Application::new(&events_loop);
     application.display.gl_window().window().grab_cursor(true).expect("couldn't grab cursor");
     let mut cursor_grabbed = true;
