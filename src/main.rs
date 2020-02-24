@@ -27,7 +27,6 @@ use glutin::{
     dpi::{LogicalPosition, LogicalSize},
     ElementState::Pressed,
     WindowEvent::{KeyboardInput},
-    MouseCursor,
 };
 
 use simplelog::{Config, TermLogger, CombinedLogger, LevelFilter};
