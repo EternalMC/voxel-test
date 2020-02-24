@@ -107,7 +107,7 @@ pub fn start_loop<F>(mut callback: F) where F: FnMut() -> Action {
 fn main() {
     CombinedLogger::init(
         vec![
-            TermLogger::new(LogLevelFilter::Debug, Config::default()).unwrap(),
+            TermLogger::new(LevelFilter::Debug, Config::default()).unwrap(),
         ]
     ).unwrap();
     let mut events_loop = glutin::event_loop::EventLoop::new();
