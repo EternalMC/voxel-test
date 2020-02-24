@@ -209,7 +209,7 @@ impl CameraState {
         false
     }
 
-    pub fn process_input(&mut self, pressed: bool, key: glutin::VirtualKeyCode) {
+    pub fn process_input(&mut self, pressed: bool, key: glutin::event::VirtualKeyCode) {
         match key {
             glutin::event::VirtualKeyCode::Space => self.moving_up = pressed,
             glutin::event::VirtualKeyCode::LControl => self.moving_down = pressed,
