@@ -1,6 +1,7 @@
 use world::{ChunkCoordinates, HashChunk, Chunk, CHUNK_SIZE, get_position};
 use rand::{Rng, SeedableRng};
 use noise::{Perlin, Seedable};
+use noise::NoiseFn;
 use block;
 
 pub trait WorldGenerator {
