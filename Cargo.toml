@@ -6,7 +6,7 @@ authors = ["James Hiew <james@hiew.net>"]
 [dependencies]
 glium = "0.26.0"
 glutin = "0.23.0" 
-cgmath = "0.17.0"
+cgmath = "0.18.0"
 collision = "0.20.1"
 float-cmp = "0.6.0"
 rand = "0.7.3"
